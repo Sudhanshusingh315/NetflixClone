@@ -1,0 +1,43 @@
+.navbar{
+  color: white;
+  font-size: 1.2rem;
+  .container{
+    display: flex;
+    // justify-content: space-around;
+    column-gap: 805px;
+    
+    // needs to be removed
+    border: 2px solid red;
+    img{
+      max-width:6.4rem ;
+      height: 49px;
+      
+      // needs to be removed
+      border: 2px solid red;
+    }
+    .left{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.6rem;
+      // needs to be removed
+      border:2px solid red
+    }
+    .right{
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      gap: 1rem;
+      // needs to be removed
+      border: 2px solid red;
+
+      img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+}
+
