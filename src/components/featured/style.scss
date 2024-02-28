@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  border: 2px solid red;
+  position: relative;
+  .backdropImg {
+    opacity: 0.7;
+    width: 100%;
+    max-height: 41rem;
+    object-fit: cover;
+  }
+  .info {
+    position: absolute;
+    top: 26rem;
+    left: 16px;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 40px;
+      border: 2px solid red;
+    }
+    .overview {
+      font-size: 18px;
+      border: 2px solid white;
+    }
+  }
+}

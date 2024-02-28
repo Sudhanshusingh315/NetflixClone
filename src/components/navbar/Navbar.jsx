@@ -1,12 +1,20 @@
+import { useState } from "react";
 import "./style.scss";
 // importing icons
 import { FaSearch } from "react-icons/fa";
-import { IoIosNotifications } from "react-icons/io";
+import { IoIosNotifications, IoMdArrowDropdown } from "react-icons/io";
 
 function Navbar() {
+  const [isScrollerd, setIsScrolled] = useState(false);
+
+  // on scorll navbar --> Important
+  window.onscroll = () => {
+    setIsScrolled(window.scrollY === 0 ? false : true);
+  };
+  console.log(isScrollerd);
   return (
     <>
-      <div className="navbar">
+      <div className={isScrollerd ? "navbar scrolled" : "navbar"}>
         <div className="container">
           <div className="left">
             <img
@@ -30,6 +38,13 @@ function Navbar() {
                 alt="catppuccin"
               />
             </span>
+            <div className="profile">
+              <IoMdArrowDropdown />
+              <div className="option">
+                <span>Setting</span>
+                <span>Logout</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

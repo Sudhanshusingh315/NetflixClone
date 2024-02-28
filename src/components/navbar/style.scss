@@ -1,43 +1,76 @@
-.navbar{
+.navbar {
+  width: 100%;
   color: white;
   font-size: 1.2rem;
-  .container{
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.3) 50%);
+
+  &.scrolled {
+    background-color: var(--main-color);
+  }
+  .container {
     display: flex;
-    // justify-content: space-around;
-    column-gap: 805px;
-    
+    justify-content: space-around;
+
     // needs to be removed
-    border: 2px solid red;
-    img{
-      max-width:6.4rem ;
+    // border: 2px solid red;
+    img {
+      max-width: 6.4rem;
       height: 49px;
-      
+
       // needs to be removed
-      border: 2px solid red;
+      // border: 2px solid red;
     }
-    .left{
+    .left {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 1.6rem;
       // needs to be removed
-      border:2px solid red
+      // border: 2px solid red;
     }
-    .right{
+    .right {
       display: flex;
-      justify-content: center; 
+      justify-content: center;
       align-items: center;
       gap: 1rem;
+      cursor: pointer;
       // needs to be removed
-      border: 2px solid red;
+      // border: 2px solid red;
 
-      img{
+      img {
+        width: 2rem;
+        height: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        object-fit: cover;
+      }
+
+      .profile {
+        // needs to be removed
+        // border: 2px solid white;
+        .option {
+          display: none;
+        }
+        &:hover {
+          .option {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            position: absolute;
+            margin-top: 12px;
+            width: 6rem;
+            height: 4rem;
+            background-color: var(--main-color);
+            padding: 5px;
+            border-radius: 12px;
+          }
+        }
       }
     }
   }
-
 }
-
