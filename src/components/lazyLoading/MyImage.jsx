@@ -1,7 +1,9 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
-const MyImage = ({ src, className, alt }) => {
+const MyImage = ({ src, className }) => {
   return (
-    <LazyLoadImage src={src} effect="blur" className={className} alt={alt} />
+    <div>
+      <LazyLoadImage src={src} effect="blur" className={className || ""} />
+    </div>
   );
 };
 

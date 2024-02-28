@@ -1,8 +1,12 @@
 import "./style.scss";
+// Importing Custom Hook
 import { useFetch } from "../../hooks/useFetch";
 // Gap left intentional
 import { useSelector, useDispatch } from "react-redux";
-import { colors } from "@mui/material";
+// This is imoprting icons
+import { FaPlay } from "react-icons/fa6";
+import { IoMdInformationCircleOutline } from "react-icons/io";
+// Image lazy loading
 import MyImage from "../lazyLoading/MyImage";
 function Feactured() {
   const url = useSelector((state) => state.dataslice.url);
@@ -26,7 +30,18 @@ function Feactured() {
           />
           <div className="info">
             <span className="title">{item.title}</span>
+
             <span className="overview">{item.overview}</span>
+            <div className="buttons">
+              <button className="play">
+                <FaPlay />
+                <span> Play</span>
+              </button>
+              <button className="more">
+                <IoMdInformationCircleOutline />
+                <span> Info</span>
+              </button>
+            </div>
           </div>
         </div>
       ) : (

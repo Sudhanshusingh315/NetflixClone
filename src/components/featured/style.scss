@@ -1,27 +1,67 @@
 .container {
   width: 100%;
-  border: 2px solid red;
+  max-height: 45rem;
   position: relative;
+  overflow: hidden;
   .backdropImg {
     opacity: 0.7;
     width: 100%;
-    max-height: 41rem;
+    min-height: 350px;
     object-fit: cover;
   }
   .info {
     position: absolute;
     top: 26rem;
-    left: 16px;
+    left: 56px;
     display: flex;
     flex-direction: column;
-
+    gap: 1.2rem;
+    width: 40rem;
     .title {
-      font-size: 40px;
-      border: 2px solid red;
+      font-size: 45px;
+      font-weight: bold;
     }
     .overview {
       font-size: 18px;
-      border: 2px solid white;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: 700;
+      // width: 44rem;
+      color: white;
+      text-overflow: ellipsis;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .buttons {
+    display: flex;
+    gap: 1.1rem;
+
+    .play {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2px;
+      border-radius: 12px;
+      padding: 1.2rem;
+      border: transparent;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2px;
+      border-radius: 12px;
+      padding: 1.2rem;
+      border: transparent;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      background-color: gray;
     }
   }
 }
