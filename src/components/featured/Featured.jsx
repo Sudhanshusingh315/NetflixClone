@@ -5,10 +5,10 @@ import { useFetch } from "../../hooks/useFetch";
 import { useSelector, useDispatch } from "react-redux";
 // This is imoprting icons
 import { FaPlay } from "react-icons/fa6";
-import { IoMdInformationCircleOutline } from "react-icons/io";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 // Image lazy loading
 import MyImage from "../lazyLoading/MyImage";
-function Feactured() {
+function Feactured({ type }) {
   const url = useSelector((state) => state.dataslice.url);
   const { data, loading } = useFetch("movie/upcoming");
   console.log(data, loading);
@@ -28,6 +28,24 @@ function Feactured() {
             src={url + item.backdrop_path}
             alt={"backdrop path"}
           />
+          {type && (
+            <div className="category">
+              <span className="type">
+                {type === "movie" ? "Movie" : "Series"}
+              </span>
+              <select name="genre" id="genre">
+                <option>Genres</option>
+                <option value="adventure">Adventure</option>
+                <option value="comedy">Comdey</option>
+                <option value="crime">Crime</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="historical">Historical</option>
+                <option value="horror">Horror</option>
+                <option value="romance">Romance</option>
+                <option value="sci-fi">Sci-fi</option>
+              </select>
+            </div>
+          )}
           <div className="info">
             <span className="title">{item.title}</span>
 
@@ -38,7 +56,7 @@ function Feactured() {
                 <span> Play</span>
               </button>
               <button className="more">
-                <IoMdInformationCircleOutline />
+                <AiOutlineInfoCircle />
                 <span> Info</span>
               </button>
             </div>

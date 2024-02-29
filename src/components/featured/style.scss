@@ -3,12 +3,25 @@
   max-height: 45rem;
   position: relative;
   overflow: hidden;
+  // for category sections
+  .category {
+    position: absolute;
+    top: 13rem;
+    left: 4rem;
+    display: flex;
+    gap: 12px;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  // backdrop Image
   .backdropImg {
     opacity: 0.7;
     width: 100%;
     min-height: 350px;
     object-fit: cover;
   }
+  // Infomation related to that image
   .info {
     position: absolute;
     top: 26rem;

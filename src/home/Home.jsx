@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import Feactured from "../components/featured/Featured";
 import Navbar from "../components/navbar/Navbar";
+import List from "../components/list/List";
 import "./style.scss";
 import { useDispatch } from "react-redux";
 import { fetchingConfiguration } from "../dataSlice/DataSlice";
 import { GrAchievement, GrAmazon } from "react-icons/gr";
+
 function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -15,7 +17,8 @@ function Home() {
     <>
       <div className="home">
         <Navbar />
-        <Feactured />
+        <Feactured type={"movie"} />
+        <List />
         <div style={{ height: "1000px" }}></div>
       </div>
     </>
