@@ -1,9 +1,31 @@
 import { useRef, useState } from "react";
 import "./style.scss";
 // Icons
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import {
+  FaPlay,
+  FaArrowAltCircleLeft,
+  FaArrowAltCircleRight,
+} from "react-icons/fa";
+import { IoMdAdd } from "react-icons/io";
+import { SlDislike, SlLike } from "react-icons/sl";
+
 function ListItems() {
-  return <div className="listItem">Item</div>;
+  return (
+    <>
+      <div className="listItem">
+        <img
+          className="cardImg"
+          src="https://dnm.nflximg.net/api/v6/rkETp35xJVj-6WaffQsS77awykM/AAAABZgKGR3hzZTX8uzQhYgcUgqZMYtYOp0ZJM87hDmFq6tEc34LDGeg7fANap1Qe8zMzEUikkavBDrQSflRXf0atDDLGggqCdgQqP5xiZONFaMB06dPacuDLvbcvZ4yKtDh_kyC.webp?r=ca8"
+        />
+        <div className="itemInfo">
+          <FaPlay />
+          <IoMdAdd />
+          <SlDislike />
+          <SlLike />
+        </div>
+      </div>
+    </>
+  );
 }
 // main Component
 
@@ -20,7 +42,7 @@ export default function List() {
       console.log("This is comming from left", slidernumber);
       listref.current.style.transform = `translateX(${250 + distance}px)`;
     }
-    if (direction === "right" && slidernumber < 4) {
+    if (direction === "right" && slidernumber < 7) {
       setSlidernumber(slidernumber + 1);
       console.log("This is comming from right", slidernumber);
       listref.current.style.transform = `translateX(${-250 + distance}px)`;

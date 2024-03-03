@@ -1,0 +1,32 @@
+.register {
+  form {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    position: absolute;
+    width: 25rem;
+    height: 25rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  input {
+    height: 40px;
+    background-color: gray;
+    color: white;
+    padding-left: 10px;
+  }
+  input::placeholder {
+    color: lightgrey;
+    font-style: italic;
+  }
+  .loginButton {
+    all: unset;
+    background-color: red;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
