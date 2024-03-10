@@ -10,13 +10,13 @@
   &.scrolled {
     background-color: var(--main-color);
   }
-  .container {
+  .navcontainer {
     display: flex;
     justify-content: space-around;
 
     // needs to be removed
     // border: 2px solid red;
-    img {
+    .navlogo {
       max-width: 6.4rem;
       height: 49px;
 
@@ -40,7 +40,7 @@
       // needs to be removed
       // border: 2px solid red;
 
-      img {
+      .navprofile {
         width: 2rem;
         height: 2rem;
         display: flex;

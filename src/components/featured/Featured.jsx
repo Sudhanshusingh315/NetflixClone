@@ -22,7 +22,7 @@ function Feactured({ type }) {
   return (
     <>
       {!loading ? (
-        <div className="container">
+        <div className="featurecontainer">
           <MyImage
             className={"backdropImg"}
             src={url + item.backdrop_path}

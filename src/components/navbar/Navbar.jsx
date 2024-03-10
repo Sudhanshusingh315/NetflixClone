@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <>
       <div className={isScrollerd ? "navbar scrolled" : "navbar"}>
-        <div className="container">
+        <div className="navcontainer">
           <div className="left">
             <img
               className="navlogo"
@@ -34,6 +34,7 @@ function Navbar() {
             <IoIosNotifications />
             <span>
               <img
+                className="navprofile"
                 src="https://gitlab.com/uploads/-/system/project/avatar/32903236/1544x1544_circle.png"
                 alt="catppuccin"
               />
