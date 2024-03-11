@@ -1,14 +1,16 @@
 const router = require("express").Router();
+const jwt = require("jsonwebtoken");
 const User = require("../Models/User");
 
-// Registering a user
+// Registering a user, or Creating the user
 router.post("/register", async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password,isAdmin } = req.body;
   try {
     const newUser = await User.create({
       username: username,
       email: email,
       password: password,
+      isAdmin:isAdmin,
     });
     res.status(201).json(newUser);
   } catch (err) {
@@ -22,7 +24,10 @@ router.post("/login", async (req, res) => {
   const user = await User.findOne({ email: email });
 
   if (user && (await user.matchPassword(password))) {
-    res.status(401).send(`Welcome ${user.username}`);
+    const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.SECRET_KEY, {
+      expiresIn: "5d",
+    });
+    res.status(401).json(token );
 
     return;
   } else {
