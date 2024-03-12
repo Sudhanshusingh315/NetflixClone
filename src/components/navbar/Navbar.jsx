@@ -3,7 +3,8 @@ import "./style.scss";
 // importing icons
 import { FaSearch } from "react-icons/fa";
 import { IoIosNotifications, IoMdArrowDropdown } from "react-icons/io";
-
+// react router dom 
+import {Link} from "react-router-dom";
 function Navbar() {
   const [isScrollerd, setIsScrolled] = useState(false);
 
@@ -16,15 +17,25 @@ function Navbar() {
     <>
       <div className={isScrollerd ? "navbar scrolled" : "navbar"}>
         <div className="navcontainer">
+
           <div className="left">
+            <Link to="/" className="link">
             <img
+
               className="navlogo"
               src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
               alt="Netflix logo"
             />
+            </Link>
+            <Link to="/" className="link">
             <span>Homepage</span>
+            </Link>
+            <Link to="/series" className="link">
             <span>Series</span>
+            </Link>
+            <Link to="/movies" className="link">
             <span>Movies</span>
+            </Link>
             <span>New and Popular</span>
             <span>My List</span>
           </div>

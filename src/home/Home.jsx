@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { fetchingConfiguration } from "../dataSlice/DataSlice";
 import { GrAchievement, GrAmazon } from "react-icons/gr";
 
-function Home() {
+function Home({ type }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchingConfiguration());
@@ -17,7 +17,7 @@ function Home() {
     <>
       <div className="home">
         <Navbar />
-        <Feactured type={"movie"} />
+        <Feactured type={type} />
         <List />
         <div style={{ height: "1000px" }}></div>
       </div>
