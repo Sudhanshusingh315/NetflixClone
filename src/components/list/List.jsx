@@ -4,16 +4,29 @@ import "./style.css";
 import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
 import { BiLike, BiDislike } from "react-icons/bi";
 import { IoListCircle } from "react-icons/io5";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { GrLinkDown } from "react-icons/gr";
+import axios from "axios";
 // Carousel Items
-function ListItems({ index }) {
+function ListItems({ data }) {
   const [isHoverd, setIsHoverd] = useState(false);
-  console.log(index)
+  const [movieData,setMovieData] = useState();
+  useEffect(() => {
+    async function movie_info(){
+      const res =  await axios.get(`http://localhost:3030/api/movie/find/${data}`,{
+        headers:{
+          token:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZWViMTRkZWM2ZWVhMDFjMzRlZjFlMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxMDE0MTc5MywiZXhwIjoxNzEwNTczNzkzfQ.hW1M8HizHeNABgv7DaMPBJMn5a8x9NFvUeuVm8d-cqw"
+        }
+      })
+      setMovieData(res);
+    }
+    movie_info();
+  }, [data]);
+
+console.log("this is movie data",movieData);
   return (
     <>
-      <div
-        className="items"
-      >
+      <div className="items">
         <div className="image_container">
           <img
             className="listItemsImage"
@@ -46,7 +59,8 @@ function ListItems({ index }) {
   );
 }
 // Carosel section with arrow movemnts
-export default function List() {
+// Now, this has item that is each item in the list object
+export default function List({ item }) {
   const ref = useRef();
   const handleLeft = () => {
     ref.current.scrollLeft = ref.current.scrollLeft - 500;
@@ -56,6 +70,7 @@ export default function List() {
   };
   return (
     <>
+      <div className="titleOfList">{item?.title}</div>
       <div className="wrapper">
         <FaChevronCircleLeft
           className="arrows left"
@@ -63,22 +78,10 @@ export default function List() {
         />
 
         <div className="carousel" ref={ref}>
-          <ListItems index={0} />
-          <ListItems index={1} />
-          <ListItems index={2} />
-          <ListItems index={3} />
-          <ListItems index={4} />
-          <ListItems index={5} />
-          <ListItems index={6} />
-          <ListItems index={7} />
-          <ListItems index={8} />
-          <ListItems index={9} />
-          <ListItems index={10} />
-          <ListItems index={11} />
-          <ListItems index={12} />
-          <ListItems index={13} />
-          <ListItems index={14} />
-          <ListItems index={15} />
+          {/* taking each ITEM which has a contect array and passing IT as a prop*/}
+          {item?.content?.map((data, i) => {
+            return <ListItems data={data} />;
+          })}
         </div>
         <FaChevronCircleRight
           className="arrows right"

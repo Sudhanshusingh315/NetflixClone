@@ -23,6 +23,7 @@
   scroll-snap-align: start;
   cursor: pointer;
   flex-shrink: 0;
+  user-select: none;
   /* transition: width 0.23s ease; */
 }
 .items:hover{

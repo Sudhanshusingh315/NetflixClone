@@ -12,7 +12,6 @@ function Navbar() {
   window.onscroll = () => {
     setIsScrolled(window.scrollY === 0 ? false : true);
   };
-  console.log(isScrollerd);
   return (
     <>
       <div className={isScrollerd ? "navbar scrolled" : "navbar"}>

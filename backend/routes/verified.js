@@ -15,6 +15,9 @@ function verify(req, res, next) {
       next();
     });
   }
+  else{
+    res.status(401).send("You are not authorised")
+  }
 }
 
 module.exports = verify;

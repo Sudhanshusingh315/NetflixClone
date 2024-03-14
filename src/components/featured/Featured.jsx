@@ -1,33 +1,22 @@
 import "./style.scss";
 // Importing Custom Hook
-import { useFetch } from "../../hooks/useFetch";
 // Gap left intentional
-import { useSelector, useDispatch } from "react-redux";
 // This is imoprting icons
 import { FaPlay } from "react-icons/fa6";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 // Image lazy loading
 import MyImage from "../lazyLoading/MyImage";
 function Feactured({ type }) {
-  const url = useSelector((state) => state.dataslice.url);
-  const { data, loading } = useFetch("movie/upcoming");
-  console.log(data, loading);
-  console.log(url);
-  let item;
-  if (!loading) {
-    const movieList = data?.results;
-    item = movieList[Math.floor(Math.random() * 20)];
-  }
-  console.log(item);
   return (
     <>
-      {!loading ? (
+     
         <div className="featurecontainer">
           <MyImage
             className={"backdropImg"}
-            src={url + item.backdrop_path}
+            src="https://img.etimg.com/thumb/width-1600,height-900,imgsize-2469193,resizemode-75,msid-106186604/magazines/panache/jason-stathams-high-octane-thriller-the-beekeeper-to-hit-indian-theatres-in-january-2024.jpg"
             alt={"backdrop path"}
           />
+          {/* this is additional */}
           {type && (
             <div className="category">
               <span className="type">
@@ -47,9 +36,9 @@ function Feactured({ type }) {
             </div>
           )}
           <div className="info">
-            <span className="title">{item.title}</span>
+            <span className="title">The Beekeeper</span>
 
-            <span className="overview">{item.overview}</span>
+            <span className="overview">The BeeKeeper who protects the hive</span>
             <div className="buttons">
               <button className="play">
                 <FaPlay />
@@ -62,9 +51,6 @@ function Feactured({ type }) {
             </div>
           </div>
         </div>
-      ) : (
-        console.log("This is where i will put Skeleton ")
-      )}
     </>
   );
 }

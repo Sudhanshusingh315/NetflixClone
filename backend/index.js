@@ -7,6 +7,11 @@ const userRouter = require("./routes/users");
 const movieRouter = require("./routes/movies");
 const listRouter = require('./routes/lists');
 const app = express();
+const cors = require('cors')
+
+app.use(cors());
+
+
 // body parser
 app.use(express.json());
 const mongoose = require("mongoose");
@@ -17,18 +22,15 @@ async function main() {
   console.log("connected to mongodb");
 }
 
+// ALL MY ROUTES
+
 // Auth Router
 app.use("/api/auth", authRouter);
-
 // User Router [CRUD]
 app.use('/api/user',userRouter);
-
 // Movie Router [CRUD]
-
 app.use('/api/movie',movieRouter);
-
 // List Router [CRUD]
-
 app.use('/api/list',listRouter);
 
 
