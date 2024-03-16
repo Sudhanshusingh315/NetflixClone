@@ -23,7 +23,6 @@ function ListItems({ data }) {
     movie_info();
   }, [data]);
 
-console.log("this is movie data",movieData);
   return (
     <>
       <div className="items">
@@ -80,7 +79,7 @@ export default function List({ item }) {
         <div className="carousel" ref={ref}>
           {/* taking each ITEM which has a contect array and passing IT as a prop*/}
           {item?.content?.map((data, i) => {
-            return <ListItems data={data} />;
+            return <ListItems  key={i} data={data} />;
           })}
         </div>
         <FaChevronCircleRight

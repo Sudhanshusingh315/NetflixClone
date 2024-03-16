@@ -27,11 +27,11 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.SECRET_KEY, {
       expiresIn: "5d",
     });
-    res.status(401).json(token );
+    res.status(200).json(token );
 
     return;
   } else {
-    res.status(500).send("Email or Password in incorrect");
+    res.status(401).send("Email or Password in incorrect");
   }
 });
 
