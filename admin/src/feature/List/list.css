@@ -1,0 +1,27 @@
+.listBar{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.myIcons{
+    font-size: 1.3rem;
+    display:flex ;
+    gap: 1rem;
+    padding: .5rem;
+    justify-content: center;
+    align-items: center;
+}
+.editList:hover{
+    background-color: rgba(99, 94, 94, 0.308);
+    border-radius: 50%;
+}
+
+
+.deletList:hover{
+    background-color: rgba(102, 100, 100, 0.37);
+    border-radius: 50%;
+}
