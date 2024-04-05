@@ -82,11 +82,13 @@ router.get("/find/:id", verify, async (req, res) => {
 });
 
 // Get Random
-router.get("/random", verify, async (req, res) => {
+// router.get("/random", verify, async (req, res) => {
+router.get("/random", async (req, res) => {
   const type = req.query.types;
   let movie;
   try {
     if (type === "series") {
+      console.log("inside ths series tab")
       movie = await Movie.aggregate([
         { $match: { isSeries: true } },
         { $sample: { size: 1 } },

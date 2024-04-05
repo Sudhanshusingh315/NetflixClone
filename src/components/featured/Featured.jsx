@@ -17,7 +17,7 @@ function Feactured({ type }) {
         const res = await axios.get("http://localhost:3030/api/movie/random", {
          headers: {
            token:
-             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZWViMTRkZWM2ZWVhMDFjMzRlZjFlMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxMDE0MTc5MywiZXhwIjoxNzEwNTczNzkzfQ.hW1M8HizHeNABgv7DaMPBJMn5a8x9NFvUeuVm8d-cqw",
+           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZjVjMmViNmNkOWIxMzdkY2M1NTliOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxMDc4NDMwNywiZXhwIjoxNzExMjE2MzA3fQ.LpnMG_nsnMzNQLW8VQ_xOMH-jU90tqCTVZQQEBxe7gI"
          },
        });
 
